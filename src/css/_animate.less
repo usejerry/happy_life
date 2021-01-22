@@ -1,0 +1,175 @@
+@import "_func.less";
+// .fadeIn(){
+//     .keyframes(fadeIn);
+//     .-frames(@-...){
+//         0%{
+//             .translate(0,0);
+//             .opacity(0);
+//         }
+//         50%,60%{
+//             .opacity(100);
+//             .translate(0,-0.4rem);
+//         }
+//         100%{
+//             .opacity(0);
+//             .translate(0,-0.4rem);
+//         }
+//     }
+// }
+
+.stepAnimate(){
+    .keyframes(stepAnimate);
+    .-frames(@-...){
+        0%{
+          background-position:0 0;
+        }
+        100%{
+          background-position:0 100%; 
+        }
+    }
+}
+
+// .foodAnimate(){
+//     .keyframes(foodAnimate);
+//     .-frames(@-...){
+//         0%{
+//           background-position:0 0;
+//         }
+//         100%{
+//           background-position:0 3.24rem; 
+//         }
+//     }
+// }
+.foodAnimate(){
+    .keyframes(foodAnimate);
+    .-frames(@-...){
+        0%{
+          background-position:0 0;
+        }
+        100%{
+          background-position:0 3.24rem; 
+        }
+    }
+}
+
+@keyframes right_rotateAn {
+	0% {
+		transform: rotate(-180deg);
+	}
+
+	100% {
+		transform: rotate(-212deg);
+	}
+}
+
+
+@keyframes right_rotateAn_two {
+	0% {
+		transform: rotate(-180deg);
+	}
+
+	100% {
+		transform: rotate(-290deg);
+	}
+}
+@keyframes right_rotateAn_three {
+	0% {
+		transform: rotate(-180deg);
+	}
+
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+
+// 半圆的转
+@keyframes rotateAn {
+	0% {
+		transform: rotate(-180deg);
+	}
+
+	100% {
+		transform: rotate(-252deg);
+	}
+}
+
+
+@keyframes rotateAn_two {
+	0% {
+		transform: rotate(-180deg);
+	}
+
+	100% {
+		transform: rotate(-324deg);
+	}
+}
+@keyframes rotateAn_three {
+	0% {
+		transform: rotate(-180deg);
+	}
+
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+
+
+@keyframes rotateAn2 {
+	0% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(-180deg);
+	}
+}
+@keyframes rotateAn2_two {
+	0% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(108deg);
+	}
+}
+@keyframes rotateAn2_three {
+	0% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(36deg);
+	}
+}
+
+@keyframes rotateAn2_four {
+	0% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(-36deg);
+	}
+}
+@keyframes rotateAn2_end {
+	0% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(-108deg);
+	}
+}
+@keyframes rotateAn2_end_end {
+	0% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(-180deg);
+	}
+}
+
+@keyframes rotateAn4 {
+	0% {
+		// opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

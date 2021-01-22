@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<title>go</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta name="renderer" content="webkit">
+	<meta name="author" content="网易，NetEase Inc." />
+	<meta name="copyright" content="网易，NetEase Inc." />
+	<meta name="pmid" content="" />
+	<meta name="designer" content="" />
+	<meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <!--for baidu 识别移动端页面并禁止百度转码-->
+    <meta name="applicable-device"content="mobile"> 
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--viewport 设置，如果页面实际情况不允许缩放请加上,user-scalable=no-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<script type="text/javascript">
+	  !function(){
+	    function params(u, p){
+	      var m = new RegExp("(?:&|/?)"+p+"=([^&$]+)").exec(u);
+	      return m ? m[1] : '';
+		}
+		var ua = navigator.userAgent;
+        var isSafari = ua.indexOf("Safari") != -1 && ua.indexOf("Version") != -1;
+        var isIphone = ua.indexOf("iPhone") != -1 && ua.indexOf("Version") != -1
+		var isIPad = isSafari && !isIphone && 'ontouchend' in document; //判断IPad
+
+	  }();
+
+	</script><!--ignore-->
+
+</head>
+
+<body>
+
+	
+	<div  class="wrap" id="app" > 
+
+		<template>
+		    <link rel="import" href="inline/pop.html?__inline" />
+		</template>
+		<template>
+		<div class="content1">
+			<div class="love_box">
+				<img class="love_l" src="./img/love_l.png" alt="">
+				<img class="love_lover" src="./img/love_lover.png" alt="">
+				<img class="love_you" src="./img/love_you.png" alt="">
+			</div>
+			<div class="men men_show"></div>
+			<div class="star_box star_box_show" id='star_box'></div>
+		</div>
+	    </template>
+		<template>
+			<!-- <div id="forhorview" >
+				<p>縦画面での閲覧をおすすめします。</p> 
+			</div> -->
+		</template>
+	</div>
+	
+	<!-- JS放底部-->
+	<script src="https://comm.res.easebar.com/js/zepto(mixNIE).last.js"></script>
+	<script src="https://nie.res.netease.com/comm/js/nie/ref/??vue.2.5.0.js,vuex.3.0.1.js,vue-router.3.0.1.js,axios.js,axios-jsonp.js"></script>
+	<!-- <script src="https://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.2.0"></script>
+    <script>
+        // init vConsole
+        var vConsole = new VConsole();
+    </script> -->
+</body>
+
+</html>
