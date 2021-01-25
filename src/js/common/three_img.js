@@ -9,8 +9,10 @@ let th_app = {
         var k = width / height; //窗口宽高比
         var s = 200; //三维场景显示范围控制系数，系数越大，显示的范围越大
         //创建相机对象
+        const color2 = new THREE.Color( 0xffffff );
         var camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 1000);
-        var scene = new THREE.Scene({background:0xffffff});  // 场景
+        var scene = new THREE.Scene();  // 场景
+        scene.background = color2
         // var camera = new THREE.PerspectiveCamera(78, window.innerWidth / window.innerHeight, 0.1, 1000); //相机
         camera.position.set(200, 300, 200); //设置相机位置
         camera.lookAt(scene.position); //设置相机方向(指向的场景对象)
@@ -19,22 +21,20 @@ let th_app = {
         document.getElementById('star_box').appendChild(renderer.domElement); //body 添加渲染节点
         var mesh;
         var loader = new THREE.TextureLoader();
-        var imgs = ['bg_ping2','love_l','love_lover']
+        var imgs = ['bg_ping2','love_l','love_lover','love_you','men','bg_ping2']
         let materials = []
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < imgs.length; i++) {
             loader.load('../../img/' + imgs[i] + '.png',
                 function(texture) {
-                    console.log('loaded');
                     var mat = new THREE.MeshBasicMaterial({
                         color: 0xffffff,
                         map: texture
                     });
                     materials.push(mat);
-                    console.log(materials.length);
-                    if (materials.length >= 3) {
+                    if (materials.length >= 5 ) {
                         mesh = new THREE.Mesh(geometry2, new THREE.MeshFaceMaterial(materials));
-                        scene.add(mesh);
-                        render();
+                        // scene.add(mesh);
+                        // render();
                     }
                 });
         }
@@ -43,10 +43,8 @@ let th_app = {
         var texture_img2 = new THREE.TextureLoader().load("../../img/love_l.png");  
 
         // var geometry = new THREE.ConeGeometry( 5, 10, 15 );//圆锥
-        // var geometry = new THREE.SphereGeometry(60,40,40);
-        var material = new THREE.MeshPhongMaterial({map:texture_img, color: '0xffffff', specular: 'red' });
-        // var cube = new THREE.Mesh(geometry, material);
-        // var cube2 = new THREE.Mesh(geometry2, material);
+        var geometry = new THREE.SphereGeometry(60,40,40);
+        var material = new THREE.MeshPhongMaterial({color: 0xffffff, specular: 'red',map:texture_img});
 
         //环境光
         var ambient = new THREE.AmbientLight(0x444444);
@@ -56,6 +54,20 @@ let th_app = {
         //辅助线
         // var axisHelper = new THREE.AxisHelper(250);
         // scene.add(axisHelper);
+        var pm = new THREE.PlaneGeometry(100,100)
+        var pm2 = new THREE.PlaneGeometry(100,100)
+        
+        var ss = new THREE.Mesh(pm,material)
+        var ss2 = new THREE.Mesh(pm2,material)
+        ss2.position.x = 100
+        ss.position.x = -100
+        ss2.position.y = 100
+        ss.position.y = -100
+        console.log(ss2)
+        scene.add(ss);
+        scene.add(ss2);
+
+
 
         //点光源
         var point = new THREE.PointLight(0xffffff);
@@ -77,7 +89,7 @@ let th_app = {
         var animate = function () {
             requestAnimationFrame(animate);
 
-            geometry2.rotateY(0.01)
+            // geometry2.rotateY(0.01)
 
             renderer.render(scene, camera);
         };
