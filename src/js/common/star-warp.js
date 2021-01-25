@@ -10,12 +10,12 @@ let pi_app = {
 
         // Get the texture for rope.
         const starTexture = PIXI.Texture.from(require('../../img/star.png'));
-        const showImg = PIXI.Texture.from(require('../../img/love_lover.png'));
+        const showImg = PIXI.Texture.from(require('../../img/bg_ping2.png'));
         const shss =   new PIXI.Sprite(showImg)
 
         shss.anchor.x = 0.5;
-        shss.anchor.y = 0.7;
-        shss.x = 200;
+        shss.anchor.y = 0.5;
+        shss.x = 100;
         shss.y = 100;
         app.stage.addChild(shss)
         const starAmount = 100;
@@ -27,7 +27,8 @@ let pi_app = {
         const starStretch = 5;
         const starBaseSize = 0.05;
 
-
+        let nax_ko = false
+        let moverSpedd = 2
         // Create the stars
         const stars = [];
         for (let i = 0; i < starAmount; i++) {
@@ -53,6 +54,7 @@ let pi_app = {
             star.x = Math.cos(deg) * distance;
             star.y = Math.sin(deg) * distance;
         }
+
 
         // Change flight speed every 5 seconds
         setInterval(() => {
@@ -84,6 +86,16 @@ let pi_app = {
                 star.sprite.scale.y = distanceScale * starBaseSize + distanceScale * speed * starStretch * distanceCenter / app.renderer.screen.width;
                 star.sprite.rotation = Math.atan2(dyCenter, dxCenter) + Math.PI / 2;
             }
+            if(shss.y+shss.height/2>height&&!nax_ko){
+                moverSpedd = -2
+                nax_ko = true
+            }
+            if(shss.y-shss.height/2<=0&&nax_ko){
+                moverSpedd = 2
+                nax_ko = false
+            }
+            // shss.y = shss.y + moverSpedd
+            // shss.x = shss.x + 2
         });
     },
 
