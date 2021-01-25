@@ -15,6 +15,9 @@ let pi_app = {
 
         shss.anchor.x = 0.5;
         shss.anchor.y = 0.7;
+        shss.x = 200;
+        shss.y = 100;
+        app.stage.addChild(shss)
         const starAmount = 100;
         let cameraZ = 0;
         const fov = 20;
